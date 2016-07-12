@@ -76,14 +76,16 @@ AMBI_AVE_NUM_32     = 0x05
 AMBI_AVE_NUM_64     = 0x06
 AMBI_AVE_NUM_128    = 0x07
 
+## smbus
 bus = smbus.SMBus(1)
 
-## FaBoProximity
-#  FaBo Proximity I2C Controll class
+## FaBo Proximity I2C Controll class
 class VCNL4010:
-    ## Begin Device
-    def __init__(self):
-        self.address = SLAVE_ADDRESS
+
+    ## Constructor
+    #  @param [in] address VCNL4010 I2C slave address default:0x13
+    def __init__(self, address=SLAVE_ADDRESS):
+        self.address = address
         self.configuration()
 
     ## Search Device
