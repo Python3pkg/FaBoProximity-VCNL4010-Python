@@ -1,6 +1,6 @@
 # coding: utf-8
-## @package FaBoProximity_VCNL4010
-#  This is a library for the FaBo Proximity I2C Brick.
+## @package VCNL4010
+#  This is a FaBoProximity_VCNL4010 library for the FaBo Proximity I2C Brick.
 #
 #  http://fabo.io/205.html
 #
@@ -166,15 +166,3 @@ class VCNL4010:
     def readAmbi(self):
         data = bus.read_i2c_block_data(self.address, REG_AMBI_DATA_H, 2)
         return data[0]<<8 | data[1]
-
-if __name__ == "__main__":
-    proximity = VCNL4010()
-
-    while True:
-        prox = proximity.readProx()
-        ambi = proximity.readAmbi()
-
-        print "Prox = ", prox,
-        print "Ambi = ", ambi,
-        print
-        time.sleep(1)
