@@ -21,8 +21,8 @@ try:
         prox = vcnl4010.readProx()
         ambi = vcnl4010.readAmbi()
 
-        print "Prox = ", prox,
-        print "Ambi = ", ambi
+        print("Prox = ", prox, end=' ')
+        print("Ambi = ", ambi)
 
         time.sleep(1)
 
